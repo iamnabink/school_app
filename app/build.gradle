@@ -1,0 +1,306 @@
+apply plugin: 'com.android.application'
+
+Properties props = new Properties()
+def appConfiguration = [:]
+def propFile = rootProject.file('local.properties')
+if (propFile != null && propFile.canRead()) {
+    props.load(new FileInputStream(propFile))
+    if (props != null &&
+            props.containsKey('storeFile') &&
+            props.containsKey('storePassword') &&
+            props.containsKey('keyAlias') &&
+            props.containsKey('keyPassword') &&
+            props.containsKey('appApiDomain') &&
+            props.containsKey('appApiKey')
+    ) {
+        appConfiguration.storeFile = file(props['storeFile'])
+        appConfiguration.storePassword = props['storePassword']
+        appConfiguration.keyAlias = props['keyAlias']
+        appConfiguration.keyPassword = props['keyPassword']
+
+        appConfiguration.appApiDomain = props['appApiDomain']
+        appConfiguration.appApiKey = props['appApiKey']
+    } else {
+        println 'local.properties found but some entries are missing'
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    println 'local.properties not found'
+    android.buildTypes.release.signingConfig = null
+}
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId rootProject.applicationId
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 9
+        versionName "1.0.6"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    signingConfigs {
+        release {
+            keyAlias appConfiguration.keyAlias
+            keyPassword appConfiguration.keyPassword
+            storeFile file(appConfiguration.storeFile)
+            storePassword appConfiguration.storePassword
+            v2SigningEnabled true
+        }
+
+        debug {
+            keyAlias appConfiguration.keyAlias
+            keyPassword appConfiguration.keyPassword
+            storeFile file(appConfiguration.storeFile)
+            storePassword appConfiguration.storePassword
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", 'API_ENDPOINT', appConfiguration.appApiDomain
+
+            testCoverageEnabled !project.hasProperty('android.injected.invoked.from.ide')
+        }
+
+        release {
+            buildConfigField "String", 'API_ENDPOINT', appConfiguration.appApiDomain
+
+
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "schools"
+    productFlavors{
+
+        ezvidhya{
+            dimension "schools"
+            applicationId "com.swipecrafts.ezvidhya"
+            versionCode 2
+            versionName "1.0.1"
+
+            buildConfigField "String", 'API_KEY', '\"71f5b3859f425ca666c4f1d496a18b38b8157c93cac5fa465961d0da38b638a01520334607000\"'
+            signingConfig signingConfigs.release
+        }
+
+        cea{
+            dimension "schools"
+            applicationId "com.swipecrafts.cea"
+            versionCode 13
+            versionName "1.1.0"
+
+            buildConfigField "String", 'API_KEY', '\"92d3cc404bfbff3f7281410f67e5bf3a023f9f4a9d1fc32f370e4cfe5b2664971557748128000\"'
+            signingConfig signingConfigs.release
+        }
+
+        everest{
+            dimension "schools"
+            applicationId "com.swipecrafts.everest"
+            versionCode 3
+            versionName "1.2"
+
+            buildConfigField "String", 'API_KEY', '\"ad48460e1355800ffc8b75f562c3fd52697f8d0a11a9d78968246fa327f404791564921556000\"'
+            signingConfig signingConfigs.release
+        }
+
+        navajyoti{
+            dimension "schools"
+            applicationId "com.swipecrafts.navajyoti"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", 'API_KEY', '\"32316ff7a067e4d676aa063c84bc22ae8254d4a788d8e954230ee5ea7c0beb5e1565152623000\"'
+            signingConfig signingConfigs.release
+        }
+
+        ilamshuvakanya{
+            dimension "schools"
+            applicationId "com.swipecrafts.ilamshuvakanya"
+            versionCode 2
+            versionName "1.1"
+
+            buildConfigField "String", 'API_KEY', '\"6d9200a2726b211115daf5a9bdd87754448d1beeeeffc39d1d3ba03d334582221565153403000\"'
+            signingConfig signingConfigs.release
+        }
+
+        smallheart {
+            dimension "schools"
+            applicationId "com.swipecrafts.smallheart"
+            versionCode 2
+            versionName "1.1"
+
+            buildConfigField "String", "API_KEY", "\"33d49935b0333ceb3c4aa5226fe4b77c2cacb0a37e458d4ce675918336e1f1341565945243000\""
+            signingConfig signingConfigs.release
+        }
+
+        dibyaratna {
+            dimension "schools"
+            applicationId "com.swipecrafts.dibyaratna"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"1f7a04da18de5f91fd08b2ed0178bd6b12a3c2eb780b0cee9ae24ca12ac460ae1533807647000\""
+            signingConfig signingConfigs.release
+        }
+
+        nirmalsiddharth {
+            dimension "schools"
+            applicationId "com.swipecrafts.nirmalsiddharth"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"16eab3c19c2cd954b96f07a7164dfe38d1069a0d237a7ae92e04fcebedff812b1566290552000\""
+            signingConfig signingConfigs.release
+        }
+
+        parvat {
+            dimension "schools"
+            applicationId "com.swipecrafts.parvat"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"557c29bda6688320c1a4c625cb7cea17a4ccec720ef11e3cd8131ab67905fdf41551589718000\""
+            signingConfig signingConfigs.release
+        }
+
+        shreepokhariya {
+            dimension "schools"
+            applicationId "com.swipecrafts.shreepokhariya"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"4db9348df95437643c4846425a7125402d4355c1b19ad649fd53e0baa7bfcfce1567508112000\""
+            signingConfig signingConfigs.release
+        }
+
+        mountmakalu {
+            dimension "schools"
+            applicationId "com.swipecrafts.mountmakalu"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"7cfc171547ee5bdbbd79e9acd233cd49e47f46538ae84424f18b3404449e98111566797565000\""
+            signingConfig signingConfigs.release
+        }
+
+        kudos {
+            dimension "schools"
+            applicationId "com.swipecrafts.kudos"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"030b1db322fc952b9d8da12b8ced1af230f2ecb9a54f8a7abe0daec44140a1d11566801044000\""
+            signingConfig signingConfigs.release
+        }
+
+        redstar {
+            dimension "schools"
+            applicationId "com.swipecrafts.redstar"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"74b363263ebcbe94d60645799c8deb52edd4587ef018110e3fa78990ab802d201567512770000\""
+            signingConfig signingConfigs.release
+        }
+
+        moonbeam {
+            dimension "schools"
+            applicationId "com.swipecrafts.moonbeam"
+            versionCode 1
+            versionName "1.0"
+
+            buildConfigField "String", "API_KEY", "\"26c35f18e7653be5a9d3d77aded6285c66807c16419c86e5e82ba0a1ea617df01547174349000\""
+            signingConfig signingConfigs.release
+        }
+
+    }
+
+    lintOptions {
+        lintConfig rootProject.file('lint.xml')
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    // youtube
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
+    // Gson converter
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.gsonConverter"
+
+    //android
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+
+    // Fullvideo
+    implementation 'bg.devlabs.fullscreenvideoview:library:1.0.0'
+//    implementation 'bg.devlabs.fullscreenvideoview:library:1.1.4'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.0.2'
+
+    //constraint layout
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
+
+    // google play service
+    implementation "com.google.android.gms:play-services-location:$rootProject.googlePlayLocationVersion"
+
+    // google map
+    implementation "com.google.android.gms:play-services-maps:$rootProject.googleMap"
+
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+
+    // Firebase
+    implementation "com.google.firebase:firebase-messaging:$rootProject.firebaseMessaging"
+
+    //Firebase Database
+    implementation 'com.google.firebase:firebase-auth:16.0.4'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+
+    // ViewModel and LiveLocationData
+    implementation "android.arch.lifecycle:runtime:$rootProject.archLifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleExtensionsVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleCompilerVersion"
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomRuntimeVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomCompilerVersion"
+
+    //D2
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerSupportVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerCompilerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerProcessorVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide"
+
+    // Exoplayer2
+    implementation "com.google.android.exoplayer:exoplayer:$rootProject.exoplayer2"
+
+    testImplementation "junit:junit:$rootProject.junit"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoCore"
+}
+
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'

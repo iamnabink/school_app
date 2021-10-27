@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- default app theme -->
+
+    <color name="colorPrimary">#f5cb5d</color>
+    <color name="colorPrimaryDark">#dcb349</color>
+    <color name="colorAccent">#1F2D3D</color>
+    <color name="colorPrimaryLight">#eed28b</color>
+
+    <color name="colorTitleText">@color/colorWhite</color>
+
+    <color name="colorPrimaryRipple">#423F51B5</color>
+    <color name="colorBottomNavigation">#D3D3D3</color>
+
+    <color name="colorPrimaryButton">@color/colorPrimary</color>
+    <color name="colorSecondaryButton">@color/colorPrimaryDark</color>
+    <!--<color name="colorSecondaryButton">#06C5FF</color>-->
+
+
+    <color name="colorPrimaryText">#1f2d3d</color>
+    <color name="colorSecondaryText">#8492A6</color>
+    <color name="colorHighlightText">#D50000</color>
+    <color name="colorImportantText">#FF0044</color>
+
+    <color name="colorActive">#4bcc1f</color>
+    <color name="colorInActive">#66000000</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#E0E0E0</color>
+
+
+    <color name="tab_enable">@color/colorPrimary</color>
+    <color name="tab_disable">@android:color/darker_gray</color>
+
+
+    <!-- 52 = 32%, hex to alpha -->
+    <color name="colorTransparentBlack32">#52000000</color>
+    <color name="colorTransparentBlack50">#80000000</color>
+    <color name="colorTransparentBlack70">#11200000</color>
+    <color name="colorTransparentBlack100">#00000000</color>
+    <color name="colorTransparentWhite">#52FFFFFF</color>
+
+    <!-- menu icon tint -->
+    <color name="colorIconTint">#8492A6</color>
+
+
+    <!--colors for calendar-->
+    <color name="colorHoliday">#f44d4d</color>
+    <color name="colorNonHoliday">#006969</color>
+    <color name="colorProfileBG">#2e353f</color>
+    <color name="card_background_color">#eceff1</color>
+    <color name="componentPrimaryColor">#546e7a</color>
+    <color name="componentSecondaryColor">#607d8b</color>
+
+
+    <!-- custom colors -->
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="text_color">#575757</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+
+</resources>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/table"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:src="@color/black" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/SName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Ez Vidhya Nepal"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/SAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SName"
+            android:textAlignment="center"
+            android:text="New Baneshwor"
+            android:textColor="@color/black"
+            android:textSize="14dp"/>
+        <TextView
+            android:id="@+id/SEstimateDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SAddress"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:text="Estd. 2062"
+            android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/SPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SEstimateDate"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:text="Tel: 9810298765"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/SMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SPhone"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="Month of:"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SMonthName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SMonth"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="-20dp"
+                android:text="Shrawan"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SPAN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SMonth"
+                android:layout_marginLeft="15dp"
+                android:text="PAN No. :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SPanNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SPAN"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="-20dp"
+                android:text="123456789"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <View
+                android:id="@+id/SView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/SPanNo"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/SBill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SView"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Bill No. :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SBillNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SBill"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="-20dp"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SBillNo"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-18dp"
+                android:layout_marginRight="74dp"
+                android:text="Date:"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SDateNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SClass"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-38dp"
+                android:layout_marginEnd="6dp"
+                android:text="2076/04/14"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/SRoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SBill"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Roll No. :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SRollNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SRoll"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="-20dp"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SRollNo"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="171dp"
+                android:layout_marginTop="-21dp"
+                android:text="Class :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SClassName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SClass"
+                android:layout_marginStart="225dp"
+                android:layout_marginTop="-20dp"
+                android:text="11"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SRollNo"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-20dp"
+                android:layout_marginRight="22dp"
+                android:text="Section :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SSectionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SClass"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-19dp"
+                android:layout_marginEnd="7dp"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SStd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SRoll"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Student Name :"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/SStdName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SStd"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-19dp"
+                android:text="Santoshi Chapagain"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+            <View
+                android:id="@+id/SView1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/SStdName"
+                android:background="@color/black"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/SNo"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/SView1"-->
+<!--                android:layout_marginStart="19dp"-->
+<!--                android:layout_marginBottom="471dp"-->
+<!--                android:text="S.No"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/black"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/SParticulars"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/SView1"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginStart="171dp"-->
+<!--                android:text="Particulars"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="12dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/SAmount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/SView1"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginStart="328dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="Amount"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold" />-->
+
+            <include android:id="@+id/news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SView1"
+                layout="@layout/table_design"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

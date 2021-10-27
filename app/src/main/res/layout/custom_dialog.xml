@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="16dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+
+        <RelativeLayout
+            android:id="@+id/relativelayout1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/dialogTitleTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/dialogCloseBtn"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#47525E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/dialogCloseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="0dp"
+                android:background="@color/colorTransparentWhite"
+                android:contentDescription="@string/icon_description"
+                app:srcCompat="@drawable/ic_close" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/colorGrey" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/scrollContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativelayout1"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp">
+
+            <com.swipecrafts.library.views.MaxHeightScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:maxHeight="232dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/dialogMessageTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/dashboard_login_message"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/dialogImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:contentDescription="@string/icon_description"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/fileLinkLyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingEnd="0dp"
+                        android:paddingStart="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="@string/link" />
+
+                        <TextView
+                            android:id="@+id/fileLinkTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:padding="5dp"
+                            android:textColor="@color/colorNonHoliday" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.swipecrafts.library.views.MaxHeightScrollView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollContent">
+
+            <LinearLayout
+                android:id="@+id/dividerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/colorGrey" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/conditionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dividerContainer"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/conditionTypeHeaderTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/parent_availability"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/conditionTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/required"
+                    android:textColor="@color/colorImportantText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/timeIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/conditionLayout"
+                android:layout_margin="4dp"
+                app:srcCompat="@drawable/ic_calendar"
+                android:layout_toLeftOf="@id/dialogTimeTV"/>
+
+            <TextView
+                android:id="@+id/dialogTimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_below="@id/conditionLayout"
+                android:layout_alignTop="@id/timeIV"
+                android:layout_alignBottom="@id/timeIV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="@string/demo_time"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

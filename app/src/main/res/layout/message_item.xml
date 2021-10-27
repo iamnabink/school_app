@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/firstRowLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/messengerNameTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/lastMessageDateTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:lines="2"
+            android:padding="5dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstRowLyt"
+        android:orientation="vertical">
+
+        <com.swipecrafts.library.views.MaxHeightScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:maxHeight="50dp">
+
+            <TextView
+                android:id="@+id/messageTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:padding="5dp"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="15sp" />
+
+        </com.swipecrafts.library.views.MaxHeightScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

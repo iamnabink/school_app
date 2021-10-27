@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.assignment.teacher.TeacherAssignmentFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_teacher_assignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/teacherAssignmentToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Assignment Upload" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/classSpinnerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+        android:text="Class"
+        android:textColor="@color/colorSecondaryText"
+        app:layout_constraintStart_toStartOf="@+id/app_bar_teacher_assignment"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_teacher_assignment" />
+
+    <Spinner
+        android:id="@+id/classListSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:dropDownVerticalOffset="50dp"
+        android:entries="@array/defaultSpinnerData"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@+id/classSpinnerLabel"
+        app:layout_constraintTop_toBottomOf="@+id/classSpinnerLabel" />
+
+    <TextView
+        android:id="@+id/sectionSpinnerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Subject"
+        android:textColor="@color/colorSecondaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/classSpinnerLabel"
+        app:layout_constraintTop_toTopOf="@+id/classSpinnerLabel" />
+
+    <Spinner
+        android:id="@+id/sectionListSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:dropDownVerticalOffset="50dp"
+        android:entries="@array/defaultSpinnerData"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@+id/sectionSpinnerLabel"
+        app:layout_constraintTop_toBottomOf="@+id/sectionSpinnerLabel" />
+
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/edtAssignmentTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_vertical"
+        android:hint="title"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/classListSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/classListSpinner" />
+
+    <TextView
+        android:id="@+id/chooseFileTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:padding="10dp"
+        android:text="Choose Document :"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAssignmentTitle" />
+
+    <ImageButton
+        android:id="@+id/chooseAssignmentFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTransparentWhite"
+        android:contentDescription="pick document button"
+        android:foreground="@drawable/touch_effect"
+        android:padding="10dp"
+        android:src="@drawable/ic_file_upload"
+        android:tint="@color/componentPrimaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chooseFileTV"
+        app:layout_constraintTop_toTopOf="@+id/chooseFileTV" />
+
+    <Button
+        android:id="@+id/btnAssignmentUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:text="Upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseFileTV" />
+
+    <TextView
+        android:id="@+id/selectedFileNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="No File Selected*"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseFileTV" />
+
+</android.support.constraint.ConstraintLayout>

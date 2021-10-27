@@ -1,0 +1,822 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.dashboard.profile.StudentProfileFragment">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/profileCollapseToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="bottom|start"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimAnimationDuration="1000"
+            app:title="Profile">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax" />
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/profileToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <View
+                    android:id="@+id/v_destination_profile_image"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:padding="2dp"
+                    android:visibility="invisible" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/studentDetailsLyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorWhite">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Personal Information"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Registration No"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentRegNoTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Class"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentClassNameTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Section"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentSectionTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Date Of Birth"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentDOBTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Address"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentAddressTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Phone"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentPhoneTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Gender"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentGenderTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Religion"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentReligionTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Blood Group"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentBloodGroupTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Caste"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentCasteTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Location"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/studentLocationTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:text="Parents Information"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorPrimary" />
+
+                        <!-- Father's Information -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Father Name"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/fatherNameTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Father Occupation"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/fatherOccupationTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Father Phone"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/fatherPhoneTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Father Office"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/fatherOfficeTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <!-- Mother's Information -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Mother Name"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/motherNameTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Mother Occupation"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/motherOccupationTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Mother Phone"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/motherPhoneTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".78"
+                                android:gravity="start"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:text="Mother Office"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".02"
+                                android:text=":"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/motherOfficeTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <com.swipecrafts.library.views.ErrorView
+                    android:id="@+id/errorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:viewType="progress" />
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <com.swipecrafts.library.views.CircleImageView
+        android:id="@+id/circle_profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="4dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_person_placeholder"
+        app:behavior_destination_id="@id/v_destination_profile_image"
+        app:border_color="#EEEEEE"
+        app:border_width="3dp"
+        app:layout_anchor="@id/app_bar_profile"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_behavior="@string/appbar_translate_scale_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

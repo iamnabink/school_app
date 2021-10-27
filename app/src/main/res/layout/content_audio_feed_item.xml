@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/feedTitleTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Title"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/feedDateTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/feedDateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="end"
+            android:text="2 Feb 2018"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/feedTitleTV" />
+
+        <TextView
+            android:id="@+id/feedPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="15dp"
+            android:gravity="end"
+            android:text="1"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/feedTitleTV" />
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorGrey"
+            app:layout_constraintEnd_toEndOf="@+id/feedTitleTV"
+            app:layout_constraintStart_toStartOf="@+id/feedTitleTV"
+            app:layout_constraintTop_toBottomOf="@+id/feedTitleTV" />
+
+        <TextView
+            android:id="@+id/feedDescTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="start"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="15sp"
+            android:justificationMode="inter_word"
+            app:layout_constraintEnd_toEndOf="@+id/feedDateTV"
+            app:layout_constraintStart_toStartOf="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <ImageView
+            android:id="@+id/feedImageView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedDescTV"
+            app:srcCompat="@drawable/placeholder" />
+
+        <RelativeLayout
+            android:id="@+id/audioPlayerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedDescTV">
+
+            <ImageButton
+                android:id="@+id/audioPlayBtn"
+                style="@android:style/Widget.Holo.MediaRouteButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_play"
+                android:tint="@android:color/black"
+                android:layout_alignParentTop="true"
+                android:layout_margin="3dp"
+                android:contentDescription="@string/icon_description"
+                android:foreground="?attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/audioStateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_alignTop="@id/audioPlayBtn"
+                android:layout_alignBottom="@id/audioPlayBtn"
+                android:layout_toEndOf="@+id/audioPlayBtn"
+                android:textColor="@color/colorPrimaryText"
+                android:visibility="gone"
+                android:text="Play Audio"/>
+
+            <com.swipecrafts.library.visualizer.BarVisualizer
+                android:id="@+id/audioVisualiser"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/audioPlayBtn"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/youtubePayerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedDescTV">
+
+            <com.google.android.youtube.player.YouTubeThumbnailView
+                android:id="@+id/youtubeThumbnailView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@color/colorTransparentBlack70" />
+
+            <ImageButton
+                android:id="@+id/youtubePlayerBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTransparentWhite"
+                android:src="@drawable/ic_play" />
+
+            <FrameLayout
+                android:id="@+id/youtubeVideoPlayerFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pdfViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedDescTV">
+
+            <Button
+                android:id="@+id/openDocumentBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="View Document"
+                android:drawableStart="@drawable/ic_open_new"
+                android:drawableTint="@color/colorWhite"/>
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

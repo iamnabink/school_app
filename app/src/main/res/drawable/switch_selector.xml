@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorActive" android:state_checked="true"/>
+    <!-- the drawable to be displayed when view is checked.-->
+    <item android:drawable="@color/colorHoliday" android:state_checked="false"/>
+    <!-- the drawable to be displayed when view is not checked. -->
+</selector>

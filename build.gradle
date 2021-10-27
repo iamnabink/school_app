@@ -1,0 +1,87 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.google.gms:google-services:3.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+ext {
+    //build
+    minSdkVersion = 19
+    targetSdkVersion = 28
+    buildToolsVersion = '27.0.2'
+    applicationId  = "com.swipecrafts.school"
+
+    //android
+    supportLibraryVersion = '27.1.1'
+
+    // constraint layout
+    constraintLayout = '1.1.2'
+
+    // google map
+    googleMap = '15.0.1'
+
+    // google play
+    googlePlayLocationVersion = '15.0.1'
+
+
+    //Firebase Messaging
+    firebaseMessaging = '17.1.0'
+
+
+    // LiveData
+    archLifecycleVersion = '1.1.1'
+    archLifecycleExtensionsVersion = '1.1.1'
+    archLifecycleCompilerVersion = '1.1.1'
+
+    //Room
+    roomRuntimeVersion = '1.1.0'
+    roomCompilerVersion = '1.1.0'
+
+    //D2
+    daggerVersion = '2.13'
+    daggerSupportVersion = '2.14.1'
+    daggerCompilerVersion = '2.13'
+    daggerProcessorVersion = '2.13'
+
+    //Retrofit
+    retrofit = '2.4.0'
+
+    //Gson
+    gson =  '2.8.5'
+
+    // JSon converter
+    gsonConverter = '2.4.0'
+
+    // Glide
+    glide = '4.7.1'
+
+    // Exoplayer2
+    exoplayer2 = '2.7.2'
+
+    // Testing
+    junit = '4.12'
+    espressoCore = '3.0.2'
+    runner = '1.0.2'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

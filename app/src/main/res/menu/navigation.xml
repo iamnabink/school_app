@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:enabled="true"
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_calendar"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/title_notifications"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/navigation_digital_class"
+        android:icon="@drawable/ic_digital_class"
+        android:title="@string/title_digital_class"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/title_dashboard"
+        app:showAsAction="ifRoom"/>
+
+</menu>

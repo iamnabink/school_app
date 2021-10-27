@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mcv_pager" type="id" />
+
+    <item name="audio_player_seekBar" type="id" />
+    <item name="audio_player_time" type="id" />
+    <item name="audio_player_title" type="id" />
+    <item name="audio_player_play_btn" type="id" />
+    <item name="audio_player_close_btn" type="id" />
+    <item name="audio_player_visualiser" type="id" />
+</resources>
